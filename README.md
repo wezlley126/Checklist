@@ -2,9 +2,13 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+To change the database connection data, access the conect.js file located in "/pages/api/mysqldb/"
+
 First, run the development server:
 
 ```bash
+npm run install
+# after
 npm run dev
 # or
 yarn dev
