@@ -1,0 +1,14 @@
+.formsDivPai {
+  height: 100vh;
+  max-width: 500px;
+  margin-inline: auto;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  max-width: 300px;
+}

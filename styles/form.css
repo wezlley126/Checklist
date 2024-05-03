@@ -1,0 +1,36 @@
+form {
+  display: flex;
+  max-width: 500px;
+  width: 100%;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  padding: 4rem 3rem;
+}
+
+form a {
+  color: grey;
+  text-decoration: inherit;
+}
+
+form a:hover {
+  color: #7a25c8;
+}
+
+input {
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+form input[type="submit"] {
+  background-color: #7a25c8;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form input[type="submit"]:hover {
+  opacity: 0.8;
+}

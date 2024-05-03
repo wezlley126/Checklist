@@ -1,5 +1,11 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    max-width: 100%;
+@import "./form.css";
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
 }
