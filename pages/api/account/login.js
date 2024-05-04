@@ -9,4 +9,6 @@ export default async function handler(req, res) {
   }); */
   console.log("Email recebido:", email);
   console.log("Senha recebida:", senha);
+  console.log("Senha criptografada:", senhaCrypt)
+  console.log('Tudo ok aqui')
 }

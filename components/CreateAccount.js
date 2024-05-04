@@ -7,13 +7,19 @@ export const CreateAccount = (props) => {
     <div className={style.formsDivPai}>
       <img className={style.logo} src={"/logo.png"} />
       <form method="post">
+      <input
+          onChange={formData}
+          name="nome"
+          type="text"
+          placeholder="Nome"
+        />
         <input
           onChange={formData}
           name="email"
           type="email"
           placeholder="Email"
         />
-        <input onChange={formData} name="cpf" type="text" placeholder="CPF" />
+        <input onChange={formData} name="cpf" type="text" placeholder="CPF" maxLength={11} />
         <input
           onChange={formData}
           name="senha"
@@ -27,7 +33,7 @@ export const CreateAccount = (props) => {
           placeholder="Repetir senha"
         />
         <input onClick={enviar} type="submit" value="Criar" />
-        <Link href="/login">Já possuo uma conta</Link>
+        <Link href="/login/login">Já possuo uma conta</Link>
       </form>
     </div>
   );
