@@ -12,3 +12,11 @@
 .logo {
   max-width: 300px;
 }
+
+.validaCPF{
+  display: 'block';
+}
+
+.inputSubmit{
+  display: 'block';
+}

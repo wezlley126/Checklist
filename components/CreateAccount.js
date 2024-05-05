@@ -2,7 +2,7 @@ import Link from "next/link";
 import style from "./CreateAccount.module.css";
 
 export const CreateAccount = (props) => {
-  const { formData, enviar } = props;
+  const { formData, enviar, cpfValida } = props;
   return (
     <div className={style.formsDivPai}>
       <img className={style.logo} src={"/logo.png"} />
@@ -32,7 +32,7 @@ export const CreateAccount = (props) => {
           type="password"
           placeholder="Repetir senha"
         />
-        <input onClick={enviar} type="submit" value="Criar" />
+        <input className = {style.inputSubmit} onClick={enviar} type="submit" value={cpfValida} />
         <Link href="/login/login">Já possuo uma conta</Link>
       </form>
     </div>

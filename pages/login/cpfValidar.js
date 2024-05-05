@@ -23,10 +23,12 @@ function validarCPF(cpf) {
 
 // Exemplo de uso:
 //const cpf = '123.456.789-09';
-if (validarCPF('08904478375')) {
+//console.log(validarCPF('08904478377'), '----------------------------------')
+/*
+if (validarCPF('08904478475')) {
     console.log('CPF válido---------------------------------------');
 } else {
     console.log('CPF inválido------------------------------------');
 }
-
+*/
 export default validarCPF;

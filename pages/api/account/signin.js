@@ -6,6 +6,8 @@ export default async function handler(req, res) {
   const {nome, email, cpf, senha, senhaConfirm } = req.body;
   const senhaCrypt = await bcrypt.hash(senha, 6);
 
+  
+
   insertUsers(cpf, nome, email, senhaCrypt)
 
   console.log("nome:", nome)
