@@ -2,6 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+The database file is in /pages/api/mysqldb/checklist.sql
 To change the database connection data, access the conect.js file located in "/pages/api/mysqldb/"
 
 First, run the development server:
