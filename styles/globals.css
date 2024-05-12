@@ -1,5 +1,9 @@
 @import "./form.css";
 
+:root {
+  --primary-color: #7a25c8;
+}
+
 * {
   margin: 0px;
   padding: 0px;

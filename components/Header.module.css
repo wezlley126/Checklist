@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+
+  justify-content: center;
+  background-color: #f7f7f7;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  padding-block: 5px;
+  gap: 20px;
+}
+
+.logo {
+  max-width: 150px;
+  padding: 5px;
+}
+
+.welcome {
+  flex: 1;
+  text-align: end;
+}
+
+.signOut {
+  padding: 7px 20px;
+}

@@ -21,7 +21,7 @@ export const Login = (props) => {
           placeholder="Senha"
         />
         <input onClick={enviar} type="submit" value="Entrar" />
-        <Link href="/login/signin">Criar conta</Link>
+        <Link href="/auth/signin">Criar conta</Link>
       </form>
     </div>
   );
