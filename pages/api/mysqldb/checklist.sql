@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 05/05/2024 às 04:35
--- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.2.12
+-- Tempo de geração: 16/05/2024 às 19:28
+-- Versão do servidor: 11.3.2-MariaDB
+-- Versão do PHP: 8.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,9 +31,17 @@ USE `checklist`;
 
 CREATE TABLE `tasks` (
   `id_task` int(11) NOT NULL,
+  `title_task` varchar(40) DEFAULT NULL,
   `task` varchar(255) DEFAULT NULL,
   `userFK` char(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `tasks`
+--
+
+INSERT INTO `tasks` (`id_task`, `title_task`, `task`, `userFK`) VALUES
+(1, 'Terminar One piece', 'excaliburrrrrrr', '08904478375');
 
 -- --------------------------------------------------------
 
@@ -47,6 +55,13 @@ CREATE TABLE `users` (
   `email` varchar(255) NOT NULL,
   `senha` char(60) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `users`
+--
+
+INSERT INTO `users` (`cpf`, `name`, `email`, `senha`) VALUES
+('08904478375', 'weslley', 'weslleyborges34@gmail.com', '$2b$06$crO.dz.V/Ts3xswaHBAxAec4ZVTKafrak2VhHuVKJu/tILSUyxCxq');
 
 --
 -- Índices para tabelas despejadas
@@ -64,6 +79,16 @@ ALTER TABLE `tasks`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`cpf`);
+
+--
+-- AUTO_INCREMENT para tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `tasks`
+--
+ALTER TABLE `tasks`
+  MODIFY `id_task` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restrições para tabelas despejadas
