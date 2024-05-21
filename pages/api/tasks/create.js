@@ -13,7 +13,7 @@ export default function handler(req, res) {
     const result = responseToken.data.response
 
     // Parte de inserção dos dados
-    const insertCommand = `INSERT INTO tasks VALUES (default, '${dataCreate.title}', '${dataCreate.task}', '${result.cpf}')`
+    const insertCommand = `INSERT INTO tasks VALUES (default, default, '${dataCreate.task}', '${result.cpf}')`
     db.query(insertCommand, (err, result) => {
       if(err){
         console.log('Erro ao inserir os dados!', err);

@@ -2,42 +2,36 @@ import axios from 'axios';
 import { useState } from 'react'
 import { useContext } from "react";
 import { AuthContext } from "@/context/authContext";
+import ReadTasks from './readTasks.js';
 
-export default function AddTask() {
+export default function AddTask({loading}) {
+  const inputTask = document.querySelector('#AddTaskInput');
   const { token } = useContext(AuthContext);
   const [requestData, setRequestData] = useState({
     token: { token }
   });
-  /*
-  const requestData = {
-    nome: 'weslley',
-    idade: 17,
-    sexo: 'gostoso',
-    token: { token }
-  }
-  */
+
+  // Pega o valor do input
   const inputsGet = (e) => {
     setRequestData({...requestData, [e.target.name]: e.target.value});
     console.log(requestData)
   }
 
+  // Envia os dados para o backend, limpa o input e recarrega as tasks
   const sendData = async (e, data) => {
     e.preventDefault();
     const response = await axios.post("/api/tasks/create", requestData);
     console.log('resposta do servidor ---------------->', response.data);
-  }
-
-  const formCancel = (e) => {
-    e.preventDefault();
+    inputTask.value = '';
+    loading()
   }
 
   return(
     <>
-    <form onSubmit = {formCancel} method = 'post'>
-      <input onChange = {inputsGet} type = 'text' name = 'title' placeholder = 'Titulo' />
-      <input onChange = {inputsGet} type = 'text' name = 'task' placeholder = 'Tarefa' />
+    <div>
+      <input onChange = {inputsGet} id = 'AddTaskInput' type = 'text' name = 'task' placeholder = 'Tarefa' />
       <input onClick = {sendData} type = 'submit' name = 'adicionar' value = 'Adicionar' />
-    </form>
+    </div>
     </>
   )
 }
