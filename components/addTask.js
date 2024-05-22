@@ -14,7 +14,6 @@ export default function AddTask({ loading }) {
   // Pega o valor do input
   const inputsGet = (e) => {
     setRequestData({ ...requestData, [e.target.name]: e.target.value });
-    console.log(requestData);
   };
 
   // Envia os dados para o backend, limpa o input e recarrega as tasks

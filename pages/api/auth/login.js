@@ -19,7 +19,6 @@ export default async function handler(req, res) {
         process.env.JWT_SECRET,
         { expiresIn: 60 * 60 * 480 },
         function (err, token) {
-          console.log("Token:", token);
           res.status(200).json({ token, userData });
         }
       );
@@ -27,8 +26,4 @@ export default async function handler(req, res) {
       res.status(400).json("senha incorreta");
     }
   });
-
-  console.log("Email recebido:", email);
-  console.log("Senha recebida:", senha);
-  console.log("Tudo ok aqui");
 }

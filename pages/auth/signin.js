@@ -13,7 +13,6 @@ export default function signin() {
     const name = event.target.name;
     const value = event.target.value;
     setLoginData({ ...loginData, [name]: value });
-    //console.log(loginData);
     // Validação do CPF
     if (name == "cpf" && value.length == 11) {
       const validacao = validarCPF(value);

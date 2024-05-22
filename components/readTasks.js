@@ -5,9 +5,12 @@ import { useState, useEffect } from "react";
 import DeleteTask from "./dropTasks.js";
 import { AuthContext } from "@/context/authContext";
 import CompleteTask from "./completeTask.js";
+import EditModal from "./EditModal";
 
 export default function ReadTasks({ reload, loading }) {
   const [tasks, setTasks] = useState([]);
+  const [isOpenEdit, setIsOpenEdit] = useState(false);
+  const [editData, setEditData] = useState({});
   const { token } = useContext(AuthContext);
 
   const getTasks = async () => {
@@ -26,6 +29,13 @@ export default function ReadTasks({ reload, loading }) {
     loading();
   };
 
+  //Abre o modal de Editar a Task
+  const editModalOpen = (data, e) => {
+    e.preventDefault();
+    setEditData(data);
+    setIsOpenEdit(true);
+  };
+
   return (
     <>
       {tasks.map((item) => {
@@ -42,7 +52,10 @@ export default function ReadTasks({ reload, loading }) {
               {item.task}
             </div>
             <div className={styles.taskButtons}>
-              <button className={styles.edit} value={item.id_task}>
+              <button
+                className={styles.edit}
+                onClick={(e) => editModalOpen(item, e)}
+              >
                 Editar
               </button>
               <button
@@ -56,6 +69,13 @@ export default function ReadTasks({ reload, loading }) {
           </div>
         );
       })}
+      {isOpenEdit && (
+        <EditModal
+          editData={editData}
+          setModalOpen={() => setIsOpenEdit(false)}
+          loading={loading}
+        />
+      )}
     </>
   );
 }

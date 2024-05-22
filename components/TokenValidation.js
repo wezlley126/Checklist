@@ -14,13 +14,11 @@ export const TokenValidation = ({ children }) => {
     async function validateToken() {
       setIsLoading(true);
       const response = await axios.post("/api/auth/verify-token", { token });
-      console.log(response);
       setIsLoggedIn({
         status: response.data.status,
         email: response.data.email,
         name: response.data.name,
       });
-      console.log(response.data);
       setIsLoading(false);
     }
     validateToken();

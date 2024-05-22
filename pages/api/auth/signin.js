@@ -17,11 +17,4 @@ export default async function handler(req, res) {
   }
 
   insertUsers(cpf, nome, email, senhaCrypt);
-
-  console.log("nome:", nome);
-  console.log("email:", email);
-  console.log("cpf:", cpf);
-  console.log("senha:", senha);
-  console.log("senhaConfirm:", senhaConfirm);
-  console.log("senhaCriptografada:", senhaCrypt);
 }
