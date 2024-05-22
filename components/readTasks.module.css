@@ -1,0 +1,32 @@
+.task {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.taskContent {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.taskButtons {
+  display: flex;
+  gap: 1rem;
+}
+
+.edit {
+  background-color: green;
+}
+
+.edit:hover {
+  opacity: 0.8;
+}
+
+.remove {
+  background-color: crimson;
+}
+
+.remove:hover {
+  opacity: 0.8;
+}

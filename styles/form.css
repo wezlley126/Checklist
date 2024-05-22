@@ -24,18 +24,18 @@ input {
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-form input[type="submit"],
+input[type="submit"],
 button {
   background-color: #7a25c8;
   color: white;
   cursor: pointer;
   transition: 0.3s;
-  border-radius: 5px;
+  border-radius: 10px;
   border: 0;
   padding: 15px 15px;
 }
 
-form input[type="submit"]:hover,
+input[type="submit"]:hover,
 button:hover {
   opacity: 0.8;
 }

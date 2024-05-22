@@ -6,7 +6,7 @@ import { AuthContext } from "@/context/authContext";
 
 export const Header = ({ email, name }) => {
   const router = useRouter();
-  const { setToken } = useContext(AuthContext);
+  const { setToken, userData } = useContext(AuthContext);
 
   function signOut(e) {
     e.preventDefault();

@@ -1,32 +1,32 @@
-.formsDivPai{
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.formsDivPai {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.formsDivPai form{
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1000px;
-    flex-direction: column;
-    gap: 2rem;
-    border: 2px solid black;
-    padding: 4rem 2rem
+.formsDivPai form {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  flex-direction: column;
+  gap: 2rem;
+  border: 2px solid black;
+  padding: 4rem 2rem;
 }
 
-.formsDivPai input{
-    padding: 1rem;
+.formsDivPai input {
+  padding: 1rem;
 }
 
-.formsDivPai input:hover{
-    background-color: black;
-    color: white;
-    transition: 0.3s;
+.formsDivPai input:hover {
+  background-color: black;
+  color: white;
+  transition: 0.3s;
 }
 
-.formsDivPai input:focus{
-    background-color: black;
-    color: white;
-    transition: 0.3s;
+.formsDivPai input:focus {
+  background-color: black;
+  color: white;
+  transition: 0.3s;
 }

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { CreateAccount } from "@/components/CreateAccount";
 import validarCPF from "./cpfValidar.js";
@@ -32,8 +32,12 @@ export default function signin() {
 
   const enviar = async (e) => {
     e.preventDefault();
-    const enviado = await axios.post("/api/auth/signin", loginData);
-    console.log("Dados enviados:", enviado);
+    try {
+      const response = await axios.post("/api/auth/signin", loginData);
+      console.log("Dados enviados:", response);
+    } catch (err) {
+      "Erro: " + err.response.data + ". " + err;
+    }
   };
 
   return (

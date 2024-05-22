@@ -7,7 +7,7 @@ const jwt = require("jsonwebtoken");
 export const TokenValidation = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(undefined);
   const [isLoading, setIsLoading] = useState(true);
-  const { token } = useContext(AuthContext);
+  const { token, setUserData } = useContext(AuthContext);
   const router = useRouter();
 
   useEffect(() => {
@@ -20,6 +20,7 @@ export const TokenValidation = ({ children }) => {
         email: response.data.email,
         name: response.data.name,
       });
+      console.log(response.data);
       setIsLoading(false);
     }
     validateToken();

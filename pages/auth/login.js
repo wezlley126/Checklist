@@ -9,7 +9,7 @@ import { AuthContext } from "@/context/authContext";
 export default function LoginPage() {
   const router = useRouter();
   const [loginData, setLoginData] = useState({});
-  const { setToken } = useContext(AuthContext);
+  const { setToken, setUserData } = useContext(AuthContext);
 
   const formData = async (event) => {
     const name = event.target.name;
@@ -19,14 +19,15 @@ export default function LoginPage() {
 
   const enviar = async (e) => {
     e.preventDefault();
-    const response = await axios.post("/api/auth/login", loginData);
-    if (response.status === 200) {
+    try {
+      const response = await axios.post("/api/auth/login", loginData);
       console.log("Token:", response.data.token);
       window.localStorage.setItem("jwt", response.data.token);
       setToken(response.data.token);
+      setUserData(response.data.userData);
       router.push("/");
-    } else {
-      console.log("Erro: ", response.data.error);
+    } catch (err) {
+      console.log("Erro: " + err.response.data + ". " + err);
     }
   };
 

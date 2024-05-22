@@ -20,7 +20,7 @@ export default async function handler(req, res) {
         { expiresIn: 60 * 60 * 480 },
         function (err, token) {
           console.log("Token:", token);
-          res.status(200).json({ token: token });
+          res.status(200).json({ token, userData });
         }
       );
     } else {
